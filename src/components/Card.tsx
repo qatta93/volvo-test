@@ -18,8 +18,14 @@ export const Card = ({ car }:any) => {
       <h1 className={styles.carCard__type}>{car.modelType}</h1>
       <img className={styles.carCard__img} src={car.imageUrl} alt="car" />
       <section className={styles.carCard__buttons}>
-        <a href={`/learn/${car.id}`}>LEARN <ChevronSmall /></a>
-        <a href={`/shop/${car.id}`}>SHOP <ChevronSmall /></a>
+        <a className={styles.carCard__btn} href={`/learn/${car.id}`}>
+          <p>LEARN</p>
+          <ChevronSmall />
+        </a>
+        <a className={styles.carCard__btn} href={`/shop/${car.id}`}>
+          <p>SHOP</p>
+          <ChevronSmall />
+        </a>
       </section>
     </article>
   )

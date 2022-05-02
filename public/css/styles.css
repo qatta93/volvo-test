@@ -1,2 +1,22 @@
-body {
+@font-face {
+  font-family: nunito;
+  src: url('/public/fonts/Nunito.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: ramabhadra;
+  src: url('/public/fonts/Ramabhadra.ttf');
+}
+
+:root {
+  --gray: #878787;
+  --blue: #1c6bba;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: nunito, sans-serif;
 }
