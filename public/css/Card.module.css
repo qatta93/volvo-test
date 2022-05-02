@@ -1,14 +1,37 @@
+@font-face {
+  font-family: nunito;
+  src: url('/public/fonts/Nunito.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: ramabhadra;
+  src: url('/public/fonts/Ramabhadra.ttf');
+}
+
 .carCard {
   flex: 0 0 auto;
   width: 18rem;
   margin: 4rem 1rem 1rem;
 }
 
+.carCard__bodyType {
+  margin: 0.5rem 0;
+  font-family: nunito, sans-serif;
+  color: #878787;
+}
+
 .carCard__type {
+  margin: 0.5rem 0 1.3rem;
+  font-family: nunito, sans-serif;
+  color: #878787;
   font-size: 1rem;
+  font-weight: 200;
 }
 
 .carCard__model {
+  margin: 0.5rem 0;
+  font-family: ramabhadra, sans-serif;
   font-size: 1.2rem;
 }
 
@@ -18,10 +41,11 @@
 
 .carCard__buttons {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
 }
 
-.carCard__buttons > * {
+.carCard__buttons a {
   color: #1c6bba;
   height: 0.9rem;
   margin: 1rem 0.2rem;
