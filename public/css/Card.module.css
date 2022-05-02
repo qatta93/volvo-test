@@ -1,0 +1,28 @@
+.carCard {
+  flex: 0 0 auto;
+  width: 18rem;
+  margin: 1rem;
+}
+
+.carCard__type {
+  font-size: 1rem;
+}
+
+.carCard__model {
+  font-size: 1.2rem;
+}
+
+.carCard__img {
+  width: 100%;
+}
+
+.carCard__buttons {
+  display: flex;
+  justify-content: center;
+  color: #3e74b8;
+}
+
+.carCard__buttons > * {
+  margin: 1rem;
+  text-decoration: none;
+}

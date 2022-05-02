@@ -1,0 +1,21 @@
+.cars__container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none; 
+}
+
+.cars__nav {
+  display: flex;
+  justify-content: center;
+}
+
+.cars__nav > * {
+  width: 1rem;
+  margin: 0.2rem;
+}

@@ -1,13 +1,13 @@
-import { HelloWorld } from "../src/components/HelloWorld";
 import "../public/css/styles.css";
 import React from "react";
 
-function HomePage() {
+function HomePage({ Component, pageProps }:any) {
   return (
     <React.StrictMode>
-      <HelloWorld />
+      <Component {...pageProps} />
     </React.StrictMode>
   );
 }
 
 export default HomePage;
+
