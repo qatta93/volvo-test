@@ -5,6 +5,7 @@ import styles from '../../public/css/Slider.module.css'
 import logo from '../../docs/chevron-small.svg';
 
 export const Slider: React.FC = () => {
+  console.log(logo)
 
   return (
     <main className={styles.cars}>

@@ -1,7 +1,7 @@
 .carCard {
   flex: 0 0 auto;
   width: 18rem;
-  margin: 1rem;
+  margin: 4rem 1rem 1rem;
 }
 
 .carCard__type {
@@ -19,10 +19,11 @@
 .carCard__buttons {
   display: flex;
   justify-content: center;
-  color: #3e74b8;
 }
 
 .carCard__buttons > * {
-  margin: 1rem;
+  color: #1c6bba;
+  height: 0.9rem;
+  margin: 1rem 0.2rem;
   text-decoration: none;
 }

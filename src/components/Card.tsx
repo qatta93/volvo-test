@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../../public/css/Card.module.css';
+import { ChevronSmall } from './ChevronSmall';
 
 // interface carProps {
 //   id: string;
@@ -17,7 +18,9 @@ export const Card = ({ car }:any) => {
       <img className={styles.carCard__img} src={car.imageUrl} alt="car" />
       <section className={styles.carCard__buttons}>
         <a href={`/learn/${car.id}`}>LEARN</a>
+        <ChevronSmall />
         <a href={`/shop/${car.id}`}>SHOP</a>
+        <ChevronSmall />
       </section>
     </article>
   )
