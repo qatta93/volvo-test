@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React, { useState, useEffect }  from "react";
 import { Card } from "./Card";
 import cars from '../../public/api/cars.json';
 import { useMediaQuery } from 'react-responsive';
@@ -10,13 +10,21 @@ import "swiper/css/pagination";
 import styles from '../../public/css/Slider.module.css';
 
 export const Slider: React.FC = () => {
-  const isMobile = useMediaQuery({ query: '(max-device-width: 450px)' });
+  const isMobile = useMediaQuery({ query: '(max-device-width: 480px)' });
+  const isTablet = useMediaQuery({ query: '(max-device-width: 768px)' });
   const [currentPage, setCurrentPage] = useState(1);
-  const [carsPerPage] = useState(4);
+  const [carsPerPage, setCarsPerPage] = useState(4);
 
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
+
+  useEffect(() => {
+    if(isTablet === true){
+      return setCarsPerPage(2)
+    }
+    setCarsPerPage(4)
+  });
 
   const paginate = (pageNumber:number) => setCurrentPage(pageNumber);
 

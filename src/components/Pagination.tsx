@@ -21,7 +21,6 @@ export const Pagin = ({ carsPerPage, totalCars, paginate, currentPage }:Paginati
 
   const getPageLeft = (curPage:number) => {
     if(curPage === firstPage) {
-      console.log(lastPage);
       return lastPage;
     };
     return curPage - 1;
