@@ -14,7 +14,7 @@ export const Slider: React.FC = () => {
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
 
-  const paginate = (pageNumber: React.SetStateAction<number>) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber:number) => setCurrentPage(pageNumber);
 
   if (isDesktop) {
     return (

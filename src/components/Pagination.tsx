@@ -2,8 +2,14 @@ import React from 'react';
 import { ChevronCircledLeft, ChevronCircledRight } from "./ChevronCircled";
 import styles from '../../public/css/Pagination.module.css';
 
+interface PaginationProps {
+  carsPerPage: number,
+  totalCars: number,
+  paginate: (num: number) => void;
+  currentPage: number,
+}
 
-export const Pagination = ({ carsPerPage, totalCars, paginate, currentPage }:any) => {
+export const Pagination = ({ carsPerPage, totalCars, paginate, currentPage }:PaginationProps) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalCars / carsPerPage); i++) {
