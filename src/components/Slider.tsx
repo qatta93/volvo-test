@@ -1,29 +1,29 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState }  from "react";
 import { Card } from "./Card";
 import cars from '../../public/api/cars.json';
 import styles from '../../public/css/Slider.module.css';
 import { useMediaQuery } from 'react-responsive';
-import { ChevronCircledLeft, ChevronCircledRight } from "./ChevronCircled";
+import { Pagination } from "./Pagination";
 
 export const Slider: React.FC = () => {
   const isDesktop = useMediaQuery({ query: '(min-device-width: 1024px)' });
   const [currentPage, setCurrentPage] = useState(1);
-  const [carsPerPage, setCarsPerPage] = useState(4);
+  const [carsPerPage] = useState(4);
 
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
-  console.log(currentCars);
+
+  const paginate = (pageNumber: React.SetStateAction<number>) => setCurrentPage(pageNumber);
 
   if (isDesktop) {
     return (
       <main className={styles.carsDesktop}>
         <section className={styles.cars__containerDesktop}>
-          {cars.map((car) => <Card car={currentCars} />)}
+          {currentCars.map((car) => <Card car={car} />)}
         </section>
         <section className={styles.cars__navDesktop}>
-          <ChevronCircledLeft />
-          <ChevronCircledRight />
+          <Pagination carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} />
         </section>
       </main>
     );
