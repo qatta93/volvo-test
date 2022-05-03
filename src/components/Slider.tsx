@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from "react";
 import { Card } from "./Card";
 import cars from '../../public/api/cars.json';
 import { useMediaQuery } from 'react-responsive';
-import { Pagin } from "./Pagination";
+import { PaginationComp } from "./Pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
@@ -39,7 +39,6 @@ export const Slider: React.FC = () => {
               clickable: true,
             }}
             modules={[Pagination]}
-            className="mySwiper"
             >
             {cars.map((car) => <SwiperSlide><Card car={car}/></SwiperSlide>)}
           </Swiper>
@@ -53,7 +52,7 @@ export const Slider: React.FC = () => {
         {currentCars.map((car) => <Card car={car} />)}
       </section>
       <section className={styles.cars__navDesktop}>
-        <Pagin carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} currentPage={currentPage} />
+        <PaginationComp carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} currentPage={currentPage} />
       </section>
     </main>
   );
