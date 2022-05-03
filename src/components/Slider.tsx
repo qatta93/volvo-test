@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Pagination } from "./Pagination";
 
 export const Slider: React.FC = () => {
-  const isDesktop = useMediaQuery({ query: '(min-device-width: 1024px)' });
+  const isMobile = useMediaQuery({ query: '(max-device-width: 450px)' });
   const [currentPage, setCurrentPage] = useState(1);
   const [carsPerPage] = useState(4);
 
@@ -16,27 +16,27 @@ export const Slider: React.FC = () => {
 
   const paginate = (pageNumber:number) => setCurrentPage(pageNumber);
 
-  if (isDesktop) {
+  if (isMobile) {
     return (
-      <main className={styles.carsDesktop}>
-        <section className={styles.cars__containerDesktop}>
-          {currentCars.map((car) => <Card car={car} />)}
+      <main className={styles.cars}>
+        <section className={styles.cars__container}>
+          {cars.map((car) => <Card car={car}/>)}
         </section>
-        <section className={styles.cars__navDesktop}>
-          <Pagination carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} currentPage={currentPage} />
+        <section className={styles.cars__nav}>
+          <img src="https://img.icons8.com/ios-filled/100/000000/circled-dot.png"/> 
+          <img src="https://img.icons8.com/ios-filled/100/000000/circled-dot.png"/>
+          <img src="https://img.icons8.com/ios-filled/100/000000/circled-dot.png"/>
         </section>
       </main>
     );
   }
   return (
-    <main className={styles.cars}>
-      <section className={styles.cars__container}>
-        {cars.map((car) => <Card car={car}/>)}
+    <main className={styles.carsDesktop}>
+      <section className={styles.cars__containerDesktop}>
+        {currentCars.map((car) => <Card car={car} />)}
       </section>
-      <section className={styles.cars__nav}>
-        <img src="https://img.icons8.com/ios-filled/100/000000/circled-dot.png"/> 
-        <img src="https://img.icons8.com/ios-filled/100/000000/circled-dot.png"/>
-        <img src="https://img.icons8.com/ios-filled/100/000000/circled-dot.png"/>
+      <section className={styles.cars__navDesktop}>
+        <Pagination carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} currentPage={currentPage} />
       </section>
     </main>
   );
