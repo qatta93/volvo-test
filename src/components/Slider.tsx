@@ -23,7 +23,7 @@ export const Slider: React.FC = () => {
           {currentCars.map((car) => <Card car={car} />)}
         </section>
         <section className={styles.cars__navDesktop}>
-          <Pagination carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} />
+          <Pagination carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} currentPage={currentPage} />
         </section>
       </main>
     );
