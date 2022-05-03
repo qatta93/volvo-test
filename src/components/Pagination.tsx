@@ -9,7 +9,7 @@ interface PaginationProps {
   currentPage: number,
 }
 
-export const Pagination = ({ carsPerPage, totalCars, paginate, currentPage }:PaginationProps) => {
+export const Pagin = ({ carsPerPage, totalCars, paginate, currentPage }:PaginationProps) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalCars / carsPerPage); i++) {

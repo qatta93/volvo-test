@@ -12,6 +12,7 @@
 :root {
   --gray: #878787;
   --blue: #1c6bba;
+  --swiper-theme-color: #000000!important;
 }
 
 * {
