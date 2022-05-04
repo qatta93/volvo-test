@@ -10,9 +10,9 @@ const Shop = () => {
       <main className={styles.shop}>
         <h1 className={styles.shop__title}>Shop</h1>
         <h2 className={styles.shop__car}>{id}</h2>
-        <Block extend={{ padding: 20 }}>
+        <Block>
           <Button onClick={() => router.back()}>GO BACK</Button>
-        </Block>      
+        </Block>    
       </main>
     );
   };

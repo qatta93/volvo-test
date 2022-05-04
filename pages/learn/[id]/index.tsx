@@ -10,7 +10,7 @@ const Learn = () => {
       <main className={styles.learn}>
         <h1 className={styles.learn__title}>Learn</h1>
         <h2 className={styles.learn__car}>{id}</h2>
-        <Block extend={{ padding: 20 }}>
+        <Block>
           <Button onClick={() => router.back()}>GO BACK</Button>
         </Block>
       </main>

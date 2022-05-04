@@ -14,7 +14,7 @@ export const Filter = ({ selectedCarsType, setSelectedCarsType, bodyTypes}:Filte
     <section className={styles.filter}>
       <Block
         extend={({ theme }) => ({
-        background: theme.color.background.primary,
+        background: theme.color.background.secondary,
         color: theme.color.foreground.alert,
         padding: 20,
         textAlign: 'center',
