@@ -30,7 +30,10 @@ export const Slider: React.FC = () => {
 
   const carsTypesData = allCars.map(car => car.bodyType);
   const bodyTypes = [...new Set(carsTypesData)];
-
+  const indexOfLastCar = currentPage * carsPerPage;
+  const indexOfFirstCar = indexOfLastCar - carsPerPage;
+  const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
+  
   useEffect(() => {
     setLoading(true)
     fetch('api/cars.json')
@@ -50,9 +53,6 @@ export const Slider: React.FC = () => {
     return setCars(allCars);
   }, [selectedCarsType]);
 
-  const indexOfLastCar = currentPage * carsPerPage;
-  const indexOfFirstCar = indexOfLastCar - carsPerPage;
-  const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
 
   useEffect(() => {
     if(isTablet === true){

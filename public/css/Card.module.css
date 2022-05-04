@@ -1,8 +1,8 @@
 .carCard {
   flex: 0 0 auto;
   width: 95%;
-  max-width: 25rem;
   margin: 4rem 0.7rem 2.5rem 0.7rem;
+  max-width: 15rem;
 }
 
 .carCard__bodyType {
@@ -49,6 +49,7 @@
 @media screen and (min-width: 768px) {
   .carCard {
     margin: 4rem 0.7rem 1.5rem 0.7rem;
+    max-width: 20rem;
   }
   .carCard__container {
     display: flex;
@@ -76,6 +77,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .carCard {
+    max-width: 25rem;
+  }
   .carCard__container {
     margin-bottom: 0.8rem;
   }
