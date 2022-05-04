@@ -10,8 +10,8 @@
 }
 
 :root {
-  --gray: #878787;
-  --blue: #1c6bba;
+  --gray: #707070;
+  --blue: #284e80;
   --swiper-theme-color: #000000!important;
   --swiper-pagination-bullet-inactive-color: rgb(155, 155, 155);
 }

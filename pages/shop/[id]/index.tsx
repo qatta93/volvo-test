@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import styles from '/public/css/ShopLearn.module.css';
+import { Block, Button } from 'vcc-ui';
 
 const Shop = () => {
   const router = useRouter();
@@ -9,7 +10,9 @@ const Shop = () => {
       <main className={styles.shop}>
         <h1 className={styles.shop__title}>Shop</h1>
         <h2 className={styles.shop__car}>{id}</h2>
-        <button className={styles.shop__btn} onClick={() => router.back()}>GO BACK</button>
+        <Block extend={{ padding: 20 }}>
+          <Button onClick={() => router.back()}>GO BACK</Button>
+        </Block>      
       </main>
     );
   };
