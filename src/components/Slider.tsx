@@ -33,23 +33,23 @@ export const Slider: React.FC = () => {
       <main className={styles.cars}>
         <section className={styles.cars__container}>
           <Swiper
-            slidesPerView={1.4}
-            spaceBetween={30}
+            slidesPerView={1.3}
+            spaceBetween={5}
             pagination={{
               clickable: true,
             }}
             modules={[Pagination]}
             >
-            {cars.map((car) => <SwiperSlide><Card car={car}/></SwiperSlide>)}
+            {cars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)}
           </Swiper>
         </section>
       </main>
     );
-  }
+  };
   return (
     <main className={styles.carsDesktop}>
       <section className={styles.cars__containerDesktop}>
-        {currentCars.map((car) => <Card car={car} />)}
+        {currentCars.map((car) => <Card key={car.id} car={car} />)}
       </section>
       <section className={styles.cars__navDesktop}>
         <PaginationComp carsPerPage={carsPerPage} totalCars={cars.length} paginate={paginate} currentPage={currentPage} />

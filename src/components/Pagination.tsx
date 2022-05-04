@@ -48,5 +48,5 @@ export const PaginationComp = ({ carsPerPage, totalCars, paginate, currentPage }
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};

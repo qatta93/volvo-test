@@ -1,10 +1,12 @@
 import React from 'react'
 import { Slider } from "../src/components/Slider";
 
-const Home = () => {
+const Cars = () => {
   return (
-    <Slider />
-  )
-}
+    <main>
+      <Slider />
+    </main>
+  );
+};
 
-export default Home
+export default Cars;

@@ -1,18 +1,9 @@
 .cars {
-  margin: 3rem 0 0 0rem;
+  margin: 3rem 0 0 0;
 }
 
 .cars__container {
-  /* display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  margin-left: 0.5rem;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar; */
-}
-
-.cars__container:first-child {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
 }
 
 .carsDesktop {
@@ -21,64 +12,15 @@
 
 .cars__containerDesktop {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 .cars__containerDesktop > * {
   flex: 1 0 21%;
   width: 5rem;
+  margin-left: 0.5rem;
 }
 
 .cars__navDesktop {
   display: flex;
   justify-content: right;
-}
-
-.cars__navDesktop > * {
-  width: 5rem;
-  margin: 0.2rem;
-  cursor: pointer;
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-slide {
-  width: 80%;
-}
-
-.swiper-slide:nth-child(2n) {
-  width: 60%;
-}
-
-.swiper-slide:nth-child(3n) {
-  width: 40%;
 }

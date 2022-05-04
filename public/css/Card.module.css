@@ -1,7 +1,7 @@
 .carCard {
   flex: 0 0 auto;
   width: 95%;
-  margin: 4rem 0rem 2rem 0.8rem;
+  margin: 4rem 0.5rem 2rem 0.5rem;
 }
 
 .carCard__bodyType {

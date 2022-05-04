@@ -1,12 +1,12 @@
 @font-face {
   font-family: nunito;
-  src: url('/public/fonts/Nunito.ttf');
+  src: url('../fonts/Nunito.ttf');
   font-weight: 400;
 }
 
 @font-face {
   font-family: ramabhadra;
-  src: url('/public/fonts/Ramabhadra.ttf');
+  src: url('../fonts/Ramabhadra.ttf');
 }
 
 :root {

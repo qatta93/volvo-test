@@ -1,0 +1,26 @@
+.shop,
+.learn {
+    text-align: center;
+    padding: 4rem;
+}
+
+.shop__title,
+.learn__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.shop__car,
+.learn__car {
+    margin: 1rem 0 3rem;
+}
+
+.shop__btn,
+.learn__btn {
+    padding: 0.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px black solid;
+    font-weight: bold;
+}
+

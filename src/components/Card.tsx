@@ -32,5 +32,5 @@ export const Card = ({ car }:CarProps) => {
         </a>
       </section>
     </article>
-  )
-}
+  );
+};

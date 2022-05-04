@@ -4,11 +4,11 @@
 
 .cars__pagination {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .cars__pagination__item {
     list-style: none;
     width: 2rem;
-    margin: 0.2rem;
+    margin-left: 0.3rem;
 }
