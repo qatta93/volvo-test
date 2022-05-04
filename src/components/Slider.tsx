@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from "react";
+import { Filter } from "./Filter";
 import { Card } from "./Card";
 import { useMediaQuery } from 'react-responsive';
 import { PaginationComp } from "./Pagination";
@@ -21,8 +22,9 @@ export const Slider: React.FC = () => {
   const isTablet = useMediaQuery({ query: '(max-device-width: 768px)' });
   const [currentPage, setCurrentPage] = useState(1);
   const [carsPerPage, setCarsPerPage] = useState(4);
-  const [cars, setCars] = useState<CarDetailsProps[]>([])
-  const [isLoading, setLoading] = useState(false)
+  const [cars, setCars] = useState<CarDetailsProps[]>([]);
+  const [isLoading, setLoading] = useState(false);
+  const [selectedCars, setSelectedCars] = useState<CarDetailsProps[]>([]);
 
   useEffect(() => {
     setLoading(true)
@@ -50,6 +52,7 @@ export const Slider: React.FC = () => {
   if (isMobile) {
     return (
       <main className={styles.cars}>
+        <Filter selectedCars={selectedCars} setSelectedCars={setSelectedCars} cars={cars}/>
         <section className={styles.cars__container}>
           <Swiper
             slidesPerView={1.3}
