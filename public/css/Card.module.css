@@ -1,6 +1,7 @@
 .carCard {
   flex: 0 0 auto;
   width: 95%;
+  max-width: 30rem;
   margin: 4rem 0.7rem 2.5rem 0.7rem;
 }
 
@@ -18,7 +19,6 @@
 }
 
 .carCard__model {
-  font-family: ramabhadra, sans-serif;
   font-size: 1.2rem;
 }
 
@@ -66,7 +66,6 @@
   .carCard__type {
     margin: 0.2rem 0;
     font-size: 0.6rem;
-    font-weight: 200;
   }
   .carCard__btn {
     font-size: 0.7rem;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Block, Text, SelectInput } from 'vcc-ui';
+import styles from '../../public/css/Filter.module.css';
 
 interface FilterProps {
   selectedCarsType: string,
@@ -10,7 +11,7 @@ interface FilterProps {
 export const Filter = ({ selectedCarsType, setSelectedCarsType, bodyTypes}:FilterProps) => {
 
   return (
-    <section>
+    <section className={styles.filter}>
       <Block
         extend={({ theme }) => ({
         background: theme.color.background.primary,

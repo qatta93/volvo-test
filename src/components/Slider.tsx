@@ -31,6 +31,8 @@ export const Slider: React.FC = () => {
   const carsTypesData = allCars.map(car => car.bodyType);
   const bodyTypes = [...new Set(carsTypesData)];
 
+  console.log(selectedCarsType)
+
   useEffect(() => {
     setLoading(true)
     fetch('api/cars.json')
@@ -43,13 +45,17 @@ export const Slider: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const filteredCarsByBody = allCars.filter(car => car.bodyType === selectedCarsType);
-    setCars(filteredCarsByBody);
+    if(selectedCarsType !== 'all'){
+      const filteredCarsByBody = allCars.filter(car => car.bodyType === selectedCarsType);
+      return setCars(filteredCarsByBody);
+    }
+    return setCars(allCars);
   }, [selectedCarsType]);
 
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
+  console.log(cars);
 
   useEffect(() => {
     if(isTablet === true){
@@ -74,11 +80,7 @@ export const Slider: React.FC = () => {
             modules={[Pagination]}
             >
             {isLoading ? <Spinner size={40} /> : null}
-            {selectedCarsType !== 'all' ?
-            cars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)
-            :
-            allCars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)
-          }
+            {cars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)}
           </Swiper>
         </section>
       </main>

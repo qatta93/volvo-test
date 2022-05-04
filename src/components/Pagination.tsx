@@ -12,6 +12,8 @@ interface PaginationProps {
 export const PaginationComp = ({ carsPerPage, totalCars, paginate, currentPage }:PaginationProps) => {
   const pageNumbers = [];
 
+  console.log(totalCars)
+
   for (let i = 1; i <= Math.ceil(totalCars / carsPerPage); i++) {
     pageNumbers.push(i);
   };

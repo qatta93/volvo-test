@@ -2,12 +2,10 @@
   margin-left: 1.5rem;
 }
 
-.carsDesktop {
-  margin: 2rem 0.7rem;
-}
-
 .cars__containerDesktop {
+  margin: 0 0.7rem;
   display: flex;
+  justify-content: center;
 }
 
 .cars__containerDesktop > * {
