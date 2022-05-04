@@ -8,6 +8,7 @@ import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from '../../public/css/Slider.module.css';
+import { Spinner } from 'vcc-ui';
 
 interface CarDetailsProps {
   id: string;
@@ -62,7 +63,7 @@ export const Slider: React.FC = () => {
             }}
             modules={[Pagination]}
             >
-            {isLoading ? <p>Loading...</p> : null}
+            {isLoading ? <Spinner size={40} /> : null}
             {cars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)}
           </Swiper>
         </section>

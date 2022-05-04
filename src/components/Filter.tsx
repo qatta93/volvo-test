@@ -1,7 +1,5 @@
 import React from 'react';
-import styles from '../../public/css/Filter.module.css';
-import Select from 'react-select';
-import { View } from 'vcc-ui';
+import { View, Text, SelectInput } from 'vcc-ui';
 
 interface CarDetailsProps {
   id: string;
@@ -13,47 +11,34 @@ interface CarDetailsProps {
 
 interface FilterProps {
   selectedCars: CarDetailsProps[],
-  setSelectedCars: React.Dispatch<React.SetStateAction<CarDetailsProps[]>>,
+  // setSelectedCars: React.Dispatch<React.SetStateAction<CarDetailsProps[]>>,
+  setSelectedCars: any,
   cars: CarDetailsProps[],
 };
 
 export const Filter = ({ selectedCars, setSelectedCars, cars}:FilterProps) => {
   const bodyTypesData = cars.map(car => car.bodyType);
   const bodyTypes = [...new Set(bodyTypesData)];
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
-  
+  const [value, setValue] = React.useState('');
+  console.log(value)
   return (
     <section>
-        {/* <h1 className={styles.filter__title}>Find cars by body-type:</h1>
-        <Select
-          defaultValue={options[0]}
-          isMulti
-          name="colors"
-          options={options}
-          className="basic-multi-select"
-          classNamePrefix="select"
-        /> */}
-    <View
-      className={styles.filter}
-      extend={({ theme }) => ({
-      background: theme.color.background.primary,
-      color: theme.color.foreground.alert,
-    })}
-  >
-              <h1 className={styles.filter__title}>Find cars by body-type:</h1>
-        <Select
-          defaultValue={options[0]}
-          isMulti
-          name="colors"
-          options={options}
-          className="basic-multi-select"
-          classNamePrefix="select"
-        />
-  </View>
-  </section>
-  )
-}
+      <View
+        extend={({ theme }) => ({
+        background: theme.color.background.primary,
+        color: theme.color.foreground.alert,
+        padding: 8,
+        textAlign: 'center',
+        height: 120,
+        marginBottom: 30,
+      })}
+      >
+        <Text extend={({ theme }) => ({ marginBottom: 20 })} variant="hillary" subStyle="emphasis">Find cars by body-type:</Text>
+        <SelectInput value='all' onChange={(e) => setValue(e.target.value)}>
+          <option value="all">all</option>
+          {bodyTypes.map(body => <option key={body} value={body}>{body}</option>)}
+        </SelectInput>
+      </View>
+    </section>
+  );
+};

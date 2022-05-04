@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronCircledLeft, ChevronCircledRight } from "./ChevronCircled";
 import styles from '../../public/css/Pagination.module.css';
+import { Block, Text } from 'vcc-ui';
 
 interface PaginationProps {
   carsPerPage: number,
