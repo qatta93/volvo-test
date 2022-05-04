@@ -37,6 +37,7 @@ export const PaginationComp = ({ carsPerPage, totalCars, paginate, currentPage }
 
   return (
     <nav className={styles.nav}>
+      {totalCars > 5 ? 
       <ul className={styles.cars__pagination}>
         <li className={styles.cars__pagination__item}>
           <a href="#" className='cars__pagination__link' onClick={() => paginate(getPageLeft(currentPage))}>
@@ -49,6 +50,8 @@ export const PaginationComp = ({ carsPerPage, totalCars, paginate, currentPage }
           </a>
         </li>
       </ul>
+      :
+      null}
     </nav>
   );
 };
