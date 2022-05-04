@@ -23,19 +23,29 @@ export const Slider: React.FC = () => {
   const isTablet = useMediaQuery({ query: '(max-device-width: 768px)' });
   const [currentPage, setCurrentPage] = useState(1);
   const [carsPerPage, setCarsPerPage] = useState(4);
+  const [allCars, setAllCars] = useState<CarDetailsProps[]>([]);
   const [cars, setCars] = useState<CarDetailsProps[]>([]);
   const [isLoading, setLoading] = useState(false);
-  const [selectedCars, setSelectedCars] = useState<CarDetailsProps[]>([]);
+  const [selectedCarsType, setSelectedCarsType] = useState<string>('all');
+
+  const carsTypesData = allCars.map(car => car.bodyType);
+  const bodyTypes = [...new Set(carsTypesData)];
 
   useEffect(() => {
     setLoading(true)
     fetch('api/cars.json')
       .then((res) => res.json())
       .then((data) => {
+        setAllCars(data)
         setCars(data)
         setLoading(false)
       })
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    const filteredCarsByBody = allCars.filter(car => car.bodyType === selectedCarsType);
+    setCars(filteredCarsByBody);
+  }, [selectedCarsType]);
 
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
@@ -53,7 +63,7 @@ export const Slider: React.FC = () => {
   if (isMobile) {
     return (
       <main className={styles.cars}>
-        <Filter selectedCars={selectedCars} setSelectedCars={setSelectedCars} cars={cars}/>
+        <Filter selectedCarsType={selectedCarsType} setSelectedCarsType={setSelectedCarsType} bodyTypes={bodyTypes}/>
         <section className={styles.cars__container}>
           <Swiper
             slidesPerView={1.3}
@@ -64,7 +74,11 @@ export const Slider: React.FC = () => {
             modules={[Pagination]}
             >
             {isLoading ? <Spinner size={40} /> : null}
-            {cars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)}
+            {selectedCarsType !== 'all' ?
+            cars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)
+            :
+            allCars.map((car) => <SwiperSlide key={car.id}><Card car={car}/></SwiperSlide>)
+          }
           </Swiper>
         </section>
       </main>
@@ -72,6 +86,7 @@ export const Slider: React.FC = () => {
   };
   return (
     <main className={styles.carsDesktop}>
+      <Filter selectedCarsType={selectedCarsType} setSelectedCarsType={setSelectedCarsType} bodyTypes={bodyTypes}/>
       <section className={styles.cars__containerDesktop}>
         {currentCars.map((car) => <Card key={car.id} car={car} />)}
       </section>
